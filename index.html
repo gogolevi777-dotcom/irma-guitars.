@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRMA GUITARS — Игорь Бухаленко</title>
+    <style>
+        :root {
+            --bg-dark: #12100e;
+            --bg-card: #1b1714;
+            --accent: #d48c46;
+            --accent-hover: #e59f5a;
+            --text-main: #f3ede6;
+            --text-muted: #a69c92;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, sans-serif; scroll-behavior: smooth; }
+        body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background: rgba(18, 16, 14, 0.95); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #2a221d; }
+        .logo { font-size: 22px; font-weight: bold; letter-spacing: 3px; color: var(--accent); }
+        nav a { color: var(--text-main); text-decoration: none; margin-left: 25px; font-size: 15px; transition: color 0.3s; }
+        nav a:hover { color: var(--accent); }
+        .hero { display: grid; grid-template-columns: 1fr 1fr; align-items: center; min-height: 85vh; padding: 40px 8%; gap: 40px; background: radial-gradient(circle at right, #261f1a 0%, #12100e 70%); }
+        .hero-text h1 { font-size: 46px; line-height: 1.2; margin-bottom: 20px; }
+        .hero-text p { font-size: 18px; color: var(--text-muted); margin-bottom: 35px; }
+        .hero-img { text-align: center; }
+        .hero-img img { max-height: 72vh; width: auto; border-radius: 8px; box-shadow: 0 20px 50px rgba(0,0,0,0.7); }
+        .btn { background-color: var(--accent); color: #12100e; padding: 15px 35px; text-decoration: none; font-weight: bold; border-radius: 4px; border: none; cursor: pointer; font-size: 16px; display: inline-block; transition: background 0.3s; }
+        .btn:hover { background-color: var(--accent-hover); }
+        section { padding: 80px 8%; }
+        h2 { text-align: center; font-size: 34px; margin-bottom: 50px; color: var(--accent); }
+        .model-showcase { display: grid; grid-template-columns: 1fr 1.2fr; background: var(--bg-card); border: 1px solid #2a221d; border-radius: 10px; overflow: hidden; }
+        .model-showcase img { width: 100%; height: 100%; object-fit: cover; }
+        .model-info { padding: 40px; }
+        .model-info h3 { font-size: 28px; margin-bottom: 15px; }
+        .specs-list { list-style: none; margin: 25px 0; }
+        .specs-list li { padding: 10px 0; border-bottom: 1px solid #2a221d; display: flex; justify-content: space-between; font-size: 15px; }
+        .specs-list span:first-child { color: var(--text-muted); }
+        .tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        .tech-grid img { width: 100%; border-radius: 8px; border: 1px solid #2a221d; }
+        .tech-text h3 { font-size: 26px; margin-bottom: 15px; color: var(--text-main); }
+        .tech-text p { color: var(--text-muted); margin-bottom: 15px; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+        .gallery-item { background: var(--bg-card); border-radius: 8px; overflow: hidden; border: 1px solid #2a221d; }
+        .gallery-item img { width: 100%; height: 240px; object-fit: cover; display: block; }
+        .gallery-item p { padding: 15px; font-size: 14px; color: var(--text-muted); }
+        .contact-form { max-width: 520px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
+        input, select, textarea { padding: 15px; background: var(--bg-card); border: 1px solid #3a3029; color: var(--text-main); border-radius: 4px; font-size: 15px; }
+        footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 14px; border-top: 1px solid #2a221d; }
+        @media (max-width: 850px) {
+            .hero, .model-showcase, .tech-grid { grid-template-columns: 1fr; }
+            .hero-text h1 { font-size: 34px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">IRMA GUITARS</div>
+        <nav>
+            <a href="#model">OM Mad</a>
+            <a href="#tech">О мастере</a>
+            <a href="#workshop">Мастерская и проекты</a>
+            <a href="#order">Заказать</a>
+            <a href="https://t.me" target="_blank" style="color: var(--accent); font-weight: bold;">Telegram</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <div class="hero-text">
+            <h1>High-End акустические гитары ручной сборки</h1>
+            <p>Авторская мастерская Игоря Бухаленко. Сочетание 3D-проектирования, точности ЧПУ и тонкой ручной настройки резонанса каждой деки.</p>
+            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                <a href="#model" class="btn">Изучить OM Mad</a>
+                <a href="https://t.me" target="_blank" class="btn" style="background: transparent; border: 1px solid var(--accent); color: var(--accent);">Канал в Telegram</a>
+            </div>
+        </div>
+        <div class="hero-img">
+            <img src="guitar-main.jpg" alt="IRMA GUITARS OM Mad — мастер Игорь Бухаленко">
+        </div>
+    </div>
+
+    <section id="model">
+        <h2>Флагманская модель</h2>
+        <div class="model-showcase">
+            <img src="guitar-main.jpg" alt="Модель OM Mad">
+            <div class="model-info">
+                <h3>IRMA OM Mad</h3>
+                <p style="color: var(--text-muted);">Инструмент класса High-End в корпусе Orchestra Model с острым флорентийским вырезом. Создан для музыкантов, которым важен бескомпромиссный отклик, читаемость каждой ноты и ювелирная эстетика деталей.</p>
+                <ul class="specs-list">
+                    <li><span>Модель:</span> <span>OM Mad (Florentine Cutaway)</span></li>
+                    <li><span>Верхняя дека:</span> <span>Отборный массив резонансной ели</span></li>
+                    <li><span>Корпус:</span> <span>Массив палисандра радиального распила</span></li>
+                    <li><span>Акустическая система:</span> <span>Решетчатая (Lattice Bracing), ручная настройка</span></li>
+                    <li><span>Инкрустация и декор:</span> <span>Сложная розетка с перламутром, многослойный кант</span></li>
+                    <li><span>Бридж и фурнитура:</span> <span>3D-профилированный бридж, высокоточная подгонка</span></li>
+                </ul>
+                <a href="#order" class="btn">Заказать инструмент</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="tech" style="background-color: #161311;">
+        <h2>Философия IRMA GUITARS</h2>
+        <div class="tech-grid">
+            <img src="bracing.jpg" alt="Решетчатая система пружин IRMA GUITARS">
+            <div class="tech-text">
+                <h3>Инженерия на службе живого звука</h3>
+                <p>Меня зовут Игорь Бухаленко, и в своей мастерской в Белгородской области я создаю инструменты, где передовые технологии работают на традиционное лютьерское искусство. 3D-моделирование и ЧПУ позволяют добиться микронной точности узлов, сложнейших инкрустаций и идеальной геометрии.</p>
+                <p>Но голос гитары рождается только в руках мастера. Я вручную настраиваю решетчатую систему пружин и толщину каждой деки, раскрывая глубокий обертональный потенциал дерева.</p>
+            </div>
+        </div>
+    </section>
+    <section id="workshop">
+        <h2>3D-проектирование, новые модели и мастерская</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="dreadnought-project.jpg" alt="Проект Dreadnought IRMA GUITARS">
+                <p><strong style="color: var(--accent);">Новый проект: Dreadnought.</strong> Разработка мощного полноразмерного корпуса с фирменной акустической архитектурой IRMA.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="project-3d.jpg" alt="3D моделирование бриджа">
+                <p>3D-моделирование геометрии бриджа и расчет акустических узлов перед обработкой.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="cnc.jpg" alt="3D и ЧПУ">
+                <p>Фрезеровка сложных деталей и посадочных мест на ЧПУ с точностью до сотых долей миллиметра.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="body-wood.jpg" alt="Материалы класса High-End">
+                <p>Отборная резонансная древесина и индивидуальная настройка решетчатого каркаса.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="assembly.jpg" alt="Сборка корпуса OM Mad">
+                <p>Сборка корпуса OM Mad в жесткой вайме с контролем напряжений и геометрии.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="rosette.jpg" alt="Ювелирная розетка">
+                <p>Высокоточная инкрустация розетки натуральным перламутром и шпоном.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="details.jpg" alt="Ручная доводка">
+                <p>Ручная доводка окантовки и финишная проработка каждой детали корпуса.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="order" style="background-color: #161311;">
+        <h2>Обсудить заказ с мастером</h2>
+        <p style="text-align: center; color: var(--text-muted); max-width: 520px; margin: -30px auto 30px;">Заполните параметры будущего инструмента или напишите напрямую в наш Telegram-канал.</p>
+        <form class="contact-form" onsubmit="submitForm(event)">
+            <input type="text" id="name" placeholder="Ваше имя" required>
+            <input type="text" id="contact" placeholder="Ваш Telegram (@username) или телефон" required>
+            <select id="spec">
+                <option value="IRMA OM Mad (Базовая спецификация)">IRMA OM Mad (Базовая спецификация)</option>
+                <option value="IRMA Dreadnought (Предзаказ нового проекта)">IRMA Dreadnought (Предзаказ нового проекта)</option>
+                <option value="IRMA Custom (Индивидуальный подбор)">IRMA Custom (Индивидуальный подбор)</option>
+                <option value="Консультация с мастером">Задать вопрос мастеру</option>
+            </select>
+            <textarea id="notes" rows="4" placeholder="Пожелания по дереву, профилю грифа, мензуре или электронике"></textarea>
+            <button type="submit" class="btn">Перейти в Telegram для связи</button>
+        </form>
+    </section>
+
+    <footer>
+        <p style="margin-bottom: 10px;"><a href="https://t.me" target="_blank" style="color: var(--accent); text-decoration: none;">Telegram-канал мастерской IRMA GUITARS</a></p>
+        <p>© 2026 IRMA GUITARS — Игорь Бухаленко. Россия, Белгородская область.</p>
+    </footer>
+
+    <script>
+        function submitForm(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const spec = document.getElementById('spec').value;
+            alert(`Спасибо, ${name}! Сейчас откроется наш Telegram-канал, где вы сможете обсудить проект «${spec}» напрямую с мастером.`);
+            window.open('https://t.me', '_blank');
+            e.target.reset();
+        }
+    </script>
+
+</body>
+</html>
